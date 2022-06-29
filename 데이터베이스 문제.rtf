@@ -1,0 +1,479 @@
+{\rtf1\ansi\ansicpg949\deff0\nouicompat\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b8\'bc\'c0\'ba \'b0\'ed\'b5\'f1;}{\f1\fmodern\fprq2\fcharset129 \'b8\'bc\'c0\'ba \'b0\'ed\'b5\'f1;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs20\lang18 SQL day01)\par
+1) DDL : \par
+1.                 2.                   3.               4.                5. \par
+\par
+\par
+\par
+\par
+2) \lang1042\'c5\'d7\'c0\'cc\'ba\'ed \'b8\'b8\'b5\'e9\'b1\'e2\lang18\par
+ \ul   (                  )\ulnone     board (\par
+     bno NUMBER(10)  -- (\ul              )\ulnone  \lang1042\'b2\'c0 \'b1\'e2\'c0\'e7\'c7\'d8\'be\'df \'c7\'d1\'b4\'d9.\lang18 / (\ul           )\ulnone   \'c1\'df\'ba\'b9 \'b9\'e8\'c1\'a6\par
+     , title VARCHAR2(200) (\ul              )\ulnone  \par
+     , wirter VARCHAR2(40) (\ul              )\ulnone  -- UNIQUE\'c1\'a6\'c7\'d1\'c0\'bb \'b0\'c9\'b8\'e9 \'c7\'d1 \'bb\'e7\'b6\'f7\'c0\'cc \'bf\'a9\'b7\'af \'b1\'db\'c0\'bb \'b8\'f8\'be\'b2\'b0\'d4 \'b5\'ca.\par
+     , content (\ul        )\ulnone   -- VARCHAR2 4000BYTE \'c1\'a6\'c7\'d1 \par
+     , reg_date (\ul                             )\ulnone  -- \'b1\'db\'c0\'cc \'c0\'db\'bc\'ba\'b5\'c8 \'c7\'f6\'c0\'e7\'bd\'c3\'b0\'a3\'c0\'cc \'c0\'da\'b5\'bf\'c0\'b8\'b7\'ce \'c0\'d4\'b7\'c2\'b5\'ca.\par
+     , view_count NUMBER(10) (\ul              )\ulnone  -- \'c1\'b6\'c8\'b8\'bc\'f6 \'c3\'b3\'c0\'bd\'bf\'a1 0\'c0\'b8\'b7\'ce \'bc\'b3\'c1\'a4\par
+ \par
+ );\par
+\par
+\par
+\par
+\par
+\par
+ 3) (\ul              )\ulnone  : \'b5\'a5\'c0\'cc\'c5\'cd\'ba\'a3\'c0\'cc\'bd\'ba\'c0\'c7 \'b1\'b8\'c1\'b6\'b8\'a6 \'ba\'af\'b0\'e6.\par
+[\'c7\'f6\'c0\'e7 \'bb\'f3\'c8\'b2 : board TABLE\lang1042\'bf\'a1 \lang18\'c7\'c1\'b6\'f3\'c0\'cc\'b8\'d3\'b8\'ae\'c5\'b0\'b8\'a6 \'ba\'ce\'bf\'a9\'c7\'cf\'c1\'f6 \'be\'ca\'be\'d2\'c0\'bd.]\par
+\par
+\par
+\par
+\par
+4 ) PK \'bc\'b3\'c1\'a4 \par
+(\ul                       )\ulnone   \par
+(\ul                               )\ulnone\par
+(\ul                        )\ulnone ;\par
+\par
+\par
+5) (\ul                               ) \lang1042\'c5\'d7\'c0\'cc\'ba\'ed\'bf\'a1 \'b5\'a5\'c0\'cc\'c5\'cd \'c3\'df\'b0\'a1\par
+\ulnone\lang18    (\ul                               )\ulnone\par
+   (\ul                     )\ulnone\par
+  (1,'\'be\'c8\'b4\'a8?', '\'b2\'d9\'b2\'d9\'b1\'ee\'b1\'ee', '\'be\'c6\'c7\'cf\'c7\'cf\'be\'c6\'c7\'cf\'c7\'cf \'a4\'bb\'a4\'bb\'a4\'bb');\par
+\par
+\par
+\par
+\par
+6) \'bf\'ac\'b0\'fc\'b0\'fc\'b0\'e8 \'bc\'b3\'c1\'a4\par
+ -- \'b0\'d4\'bd\'c3\'b9\'b0\'b0\'fa \'b4\'f1\'b1\'db\'c0\'c7 \'b0\'fc\'b0\'e8 \par
+ --    (\ul           :          )\ulnone\par
+ \par
+\par
+\par
+7) \'b4\'f1\'b1\'db \'c5\'d7\'c0\'cc\'ba\'ed \'bb\'fd\'bc\'ba \par
+ (\ul                     ) \ulnone REPLY(\par
+   rno NUMBER(10) -- \'b4\'f1\'b1\'db\'b9\'f8\'c8\'a3\par
+   ,r_content VARCHAR2(400) -- \'b4\'f1\'b1\'db\'b3\'bb\'bf\'eb\par
+   ,r_writer VARCHAR2(40) NOT NULL\par
+\par
+-- foreing key \lang1042\'bc\'b3\'c1\'a4 \'c7\'cf\'b1\'e2\lang18\par
+   , (\ul                     ) \ulnone -- *\'ba\'ce\'b8\'f0 \'c5\'d7\'c0\'cc\'ba\'ed\'c0\'c7 PK\'c0\'cc\'b8\'a6 \'b0\'a1\'c1\'f6\'b0\'ed \'c0\'d6\'be\'ee\'be\'df \'c7\'d1\'b4\'d9.*\par
+                           -- foreing key \'bc\'b3\'c1\'a4\'c0\'cc \'be\'c8\'b5\'c8 \'bb\'f3\'c5\'c2.\par
+(\ul                                   ) \ulnone --PK \'bc\'b3\'c1\'a4 \par
+ );\par
+\par
+\par
+\par
+8) -- \'bf\'dc\'b7\'a1\'c5\'b0 \'bc\'b3\'c1\'a4 (FOREING KEY) : \'c5\'d7\'c0\'cc\'ba\'ed \'b0\'a3\'c0\'c7 \'b0\'fc\'b0\'e8 \'c1\'a6\'be\'e0 \'bc\'b3\'c1\'a4\par
+reply \lang1042\'c5\'d7\'c0\'cc\'ba\'ed\'bf\'a1 board \'c5\'d7\'c0\'cc\'ba\'ed bno\'b8\'a6 foreing key\'b7\'ce \'bc\'b3\'c1\'a4 \'c7\'cf\'b1\'e2\lang18\par
+   (\ul                     ) \ulnone\par
+  (\ul                                ) \ulnone\par
+  (\ul                               ) \ulnone\par
+  (\ul                               ) \ulnone  ;\par
+\par
+\par
+\par
+9)  -- \'c4\'c3\'b7\'b3 \'c3\'df\'b0\'a1\par
+  -- ex) \'b4\'f1\'b1\'db \'c5\'d7\'c0\'cc\'ba\'ed\'bf\'a1 \'b3\'af\'c2\'a5\'b8\'a6 \'b3\'d6\'b0\'ed \'bd\'cd\'b4\'d9.\par
+  (\ul                                ) \ulnone\par
+  (\ul                                         ) ;\ulnone\par
+\par
+\par
+\par
+10)  -- \'c4\'c3\'b7\'b3 \'c1\'a6\'b0\'c5\par
+  (\ul                                ) \ulnone\par
+  (\ul                                         ) ;\ulnone\par
+\par
+\par
+\par
+ 11) -- \'c4\'c3\'b7\'b3 \'bc\'f6\'c1\'a4\par
+ -- ex) board \'c5\'d7\'c0\'cc\'ba\'ed\'bf\'a1 title \'b1\'db\'c0\'da\'c0\'d4\'b7\'c2\'bc\'f6\'c1\'a6\'c7\'d1\'c0\'bb 200byte\'bf\'a1\'bc\'ad 500byte\'b7\'ce \'bc\'f6\'c1\'a4\par
+  (\ul                                ) \ulnone\par
+  (\ul                                         ) ;\ulnone\par
+\par
+\par
+\par
+12) -- \'c5\'d7\'c0\'cc\'ba\'ed \'bb\'e8\'c1\'a6\par
+(\ul                                ) \par
+\ulnone (\ul                                     ) \ulnone\par
+(\ul                                         ) ;\par
+\par
+\ulnone 13) -- DML : (\ul                   ) ;\ulnone\par
+-- (\ul  1.         , 2.          , 3.            , 4.            )\ulnone (R C U D) -> (C R U D)\par
+-- (\ul               )\ulnone\'b4\'c2 \'c1\'b6\'c8\'b8 \'b3\'bb\'bf\'eb\'c0\'bb \'b9\'dd\'c8\'af\par
+-- (\ul                             ) \ulnone\'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6 \'ba\'af\'c8\'af \'c7\'cf\'b0\'ed \'ba\'af\'c8\'af \'bf\'a9\'ba\'ce\'b8\'a6 TRUE, FALSE\'b7\'ce \'b9\'dd\'c8\'af\par
+\par
+14) (\ul                   ) \ulnone board -- 1\'b9\'f8 \lang1042\'bb\'f0\'c0\'d4\lang18\par
+   (bno, title, content, wirter, reg_date) \par
+   (\ul            )\ulnone\par
+     (\ul                                       )\ulnone  ; \par
+     \par
+INSERT INTO board --2\'b9\'f8 \lang1042\'bb\'f0\'c0\'d4\lang18\par
+15) -- (\ul                   ) \lang1042\'bb\'f0\'c0\'d4 \'b0\'a1\'b4\'c9\'bf\'a9\'ba\'ce\'bf\'cd \'c0\'cc\'c0\'af\ulnone\lang18\par
+   (bno, content, wirter) \par
+VALUES \par
+     (1, '\'b6\'f6\'b6\'f6\'b6\'f6', '\'b8\'b6\'c0\'cc\'c4\'dd' ) ; \par
+     \par
+INSERT INTO board --3\'b9\'f8 INSERT\par
+16) (\ul                   ) \lang1042\'bb\'f0\'c0\'d4 \'b0\'a1\'b4\'c9\'bf\'a9\'ba\'ce\'bf\'cd \'c0\'cc\'c0\'af\ulnone\lang18\par
+   (bno, title, wirter) \par
+VALUES \par
+     (1, '\'b6\'f6\'b6\'f6\'b6\'f6', '\'b8\'b6\'c0\'cc\'c4\'dd' ) ; \par
+     \par
+INSERT INTO board --4\'b9\'f8 INSERT\par
+17) (\ul                   ) \lang1042\'bb\'f0\'c0\'d4 \'b0\'a1\'b4\'c9\'bf\'a9\'ba\'ce\'bf\'cd \'c0\'cc\'c0\'af\ulnone\lang18\par
+   (bno, title, wirter) \par
+VALUES \par
+     (2, '\'b6\'f6\'b6\'f6\'b6\'f6', '\'b8\'b6\'c0\'cc\'c4\'dd' ) ; \par
+    \par
+INSERT INTO board \par
+ \par
+ VALUES\par
+ 18)  (\ul                   ) \lang1042\'bb\'f0\'c0\'d4 \'b0\'a1\'b4\'c9\'c7\'cf\'b0\'d4 VALUES \'b0\'aa \'b3\'d6\'b1\'e2\ulnone\lang18 ;\par
+\par
+\par
+ -- ex) title\'c0\'c7 \'b3\'bb\'bf\'eb\'c0\'bb \'bc\'f6\'c1\'a4\par
+19)  (\ul                       )\ulnone\par
+ (\ul                )\ulnone  = '\'bc\'f6\'c1\'a4\'b5\'c8 \'c1\'a6\'b8\'f1\'c0\'cc\'be\'df~'\par
+20) (\ul                )\ulnone = 3; -- 3\'b9\'f8 \'b1\'db\'c0\'bb \'b4\'eb\'bb\'f3\'c0\'b8\'b7\'ce \'c1\'a6\'b8\'f1\'c0\'bb '\'bc\'f6\'c1\'a4\'b5\'c8 \'c1\'a6\'b8\'f1\'c0\'cc\'be\'df~' \'b7\'ce \'b9\'d9\'b2\'e3\'b6\'f3\par
+ \par
+ -- 2\'b9\'f8\'b1\'db \'bc\'f6\'c1\'a4\par
+ (\ul                       )\ulnone\par
+ SET wirter = '\'bc\'f6\'c1\'a4\'b8\'c7' \par
+     , content = '\'b8\'de\'b7\'d5\'b8\'de\'b7\'d5\'b8\'de\'b7\'d5 fix'\par
+ (\ul             )\ulnone  bno = 2;\par
+ \par
+21) (\ul                       )\ulnone\'c0\'fd \'bb\'fd\'b7\'ab\'bd\'c3 \'c0\'fc\'c3\'bc\'b0\'a1 \'bc\'f6\'c1\'a4\'b5\'c8\'b4\'d9.\par
+ \par
+22) 1\'b9\'f8 \'b1\'db \'bb\'e8\'c1\'a6\par
+ (\ul                           )\ulnone\par
+ (\ul             )\ulnone  bno = 1; -- (\ul                 )\ulnone  \'c0\'fd\'c0\'bb \'bb\'fd\'b7\'ab\'c7\'cf\'b8\'e9 TRUNCATE \'c3\'b3\'b7\'b3 \'b8\'f0\'b5\'ce \'bb\'e8\'c1\'a6\par
+\par
+23) (\ul                       )\par
+\ulnone      (\'b7\'d1\'b9\'e9 \'b0\'a1\'b4\'c9, \'bc\'f6\'b5\'bf\'c4\'bf\'b9\'d4 \'b0\'a1\'b4\'c9, \'b7\'ce\'b1\'d7\'b3\'b2\'b1\'e2\'b1\'e2 \'b0\'a1\'b4\'c9)\par
+\par
+24)   (\ul                       )\ulnone\par
+(\'b7\'d1\'b9\'e9 \'ba\'d2\'b0\'a1\'b4\'c9, \'c0\'da\'b5\'bf\'c4\'bf\'b9\'d4, \'b7\'ce\'b1\'d7\'b8\'a6 \'b3\'b2\'b1\'e6 \'bc\'f6 \'be\'f8\'c0\'bd, \'c5\'d7\'c0\'cc\'ba\'ed \'bb\'fd\'bc\'ba \'c3\'ca\'b1\'e2\'bb\'f3\'c5\'c2\'b7\'ce \'ba\'b9\'b1\'cd)\par
+\par
+26)   (\ul                       )\par
+\ulnone (\'b7\'d1\'b9\'e9 \'ba\'d2\'b0\'a1\'b4\'c9, \'c0\'da\'b5\'bf\'c4\'bf\'b9\'d4, \'b7\'ce\'b1\'d7\'b8\'a6 \'b3\'b2\'b1\'e6 \'bc\'f6 \'be\'f8\'c0\'bd, \'c5\'d7\'c0\'cc\'ba\'ed \'b1\'b8\'c1\'b6\'b0\'a1 \'bf\'cf\'c0\'fc \'bb\'e8\'c1\'a6\'b5\'ca) \par
+
+\pard\nowidctlpar\sa200\sl276\slmult1\f1\par
+27)  \lang1042\'b5\'a5\'c0\'cc\'c5\'cd \'c1\'b6\'c0\'db\'be\'ee\par
+ - SELECT : \'b5\'a5\'c0\'cc\'c5\'cd\'ba\'a3\'c0\'cc\'bd\'ba\'bf\'a1 \'b5\'e9\'be\'ee \'c0\'d6\'b4\'c2 \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6 \'c1\'b6\'c8\'b8\'c7\'cf\'b0\'c5\'b3\'aa \'b0\'cb\'bb\'f6\'c7\'cf\'b1\'e2 \'c0\'a7\'c7\'d1 \'b8\'ed\'b7\'c9\'be\'ee\'b8\'a6 \'b8\'bb\'c7\'cf\'b4\'c2 \'b0\'cd\'c0\'b8\'b7\'ce\par
+              RETREVE \'b6\'f3\'b0\'ed\'b5\'b5 \'c7\'d1\'b4\'d9.\par
+             \par
+ - INSERT : \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6 \'c5\'d7\'c0\'cc\'ba\'ed\'bf\'a1 \'bb\'f5\'b7\'ce\'bf\'ee \'c7\'e0\'c0\'bb \'c1\'fd\'be\'ee \'b3\'d6\'b4\'c2\'b4\'d9.\par
+ - UPDATE :  \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6 \'bc\'f6\'c1\'a4\'c7\'d1\'b4\'d9.\par
+ - DELETE : \'bf\'f8\'c7\'cf\'c1\'f6 \'be\'ca\'b4\'c2 \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6 \'bb\'e8\'c1\'a6\'c7\'d1\'b4\'d9.\par
+\par
+               - \'b5\'a5\'c0\'cc\'c5\'cd\'ba\'a3\'c0\'cc\'bd\'ba\'c0\'c7 \'c5\'d7\'c0\'cc\'ba\'ed\'bf\'a1 \'b5\'e9\'be\'ee \'c0\'d6\'b4\'c2 \'b5\'a5\'c0\'cc\'c5\'cd\'bf\'a1 \'ba\'af\'c7\'fc\'c0\'bb \'b0\'a1\'c7\'cf\'b4\'c2 \'c1\'be\'b7\'f9\'c0\'c7 \'b8\'ed\'b7\'c9\'be\'ee\'b5\'e9\'c0\'bb \'b8\'b8\'c7\'d1\'b4\'d9.\par
+\par
+28) \'b5\'a5\'c0\'cc\'c5\'cd \'c1\'a4\'c0\'c7\'be\'ee\par
+  - CREATE\par
+  - ALTER\par
+  - DROP\par
+  - RENAME\par
+  - TRUNCATE\par
+\par
+29) \'b5\'a5\'c0\'cc\'c5\'cd \'c1\'a6\'be\'ee\'be\'ee\par
+  - GRANT\par
+  - REVOKE\par
+\par
+30) \'c6\'ae\'b7\'a3\'c0\'e8\'bc\'c7 \'c1\'a6\'be\'ee\'be\'ee\par
+  - COMMIT\par
+  - ROLLBACK\par
+\par
+\par
+\par
+\par
+ -- SELECT \'b1\'e2\'ba\'bb\par
+ 31) SELECT \par
+       emp_no, emp_nm \par
+ FROM tb_emp; \par
+ \par
+\lang1033 32) SELECT\par
+ certi_cd, certi_nm\par
+ \par
+ FROM tb_certi;\par
+ \par
+33) \lang1042 SELECT\par
+    *     -- \'b8\'f0\'b5\'e7 \'c4\'c3\'b7\'b3\'c0\'bb \'c1\'b6\'c8\'b8\par
+ FROM tb_dept;\par
+ \par
+ 34) SELECT\par
+  emp_nm, emp_no -- \'c1\'b6\'c8\'b8\'bd\'c3 \'c4\'c3\'b7\'b3\'c0\'c7 \'bc\'f8\'bc\'ad\'b0\'a1 \'b9\'d9\'b2\'f1\par
+  \par
+ FROM tb_emp;\par
+ \par
+ \par
+ \par
+35) DISTINCT : \'c1\'df\'ba\'b9\'b0\'aa\'c0\'bb \'c1\'a6\'bf\'dc\'c7\'cf\'b0\'ed \'c1\'b6\'c8\'b8\par
+ -- TB-CERT \'c0\'c7 \'b9\'df\'c7\'e0\'b1\'e2\'b0\'fc\'b8\'ed\'c0\'bb \'be\'cb\'b0\'ed \'bd\'cd\'b4\'d9.\par
+ SELECT --ALL \'bb\'fd\'b7\'ab\'c7\'cf\'b8\'e9 SELECT ALL\'c0\'cc \'c0\'da\'b5\'bf\'c0\'b8\'b7\'ce \'c0\'db\'bc\'ba\'b5\'c8 \'b0\'cd\'c0\'cc\'b4\'d9.\par
+     issue_insti_nm \par
+     FROM tb_certi;\par
+     \par
+36) SELECT DISTINCT\par
+    certi_nm, issue_insti_nm -- SELECT ALL\'b0\'fa \'b6\'c8\'b0\'b0\'c0\'cc \'b8\'f0\'b5\'e7 \'c7\'e0\'c0\'cc \'c3\'e2\'b7\'c2\'b5\'c7\'be\'fa\'b4\'d9.\par
+ FROM tb_certi;\par
+ \par
+ 37)\'bf\'ad \'ba\'b0\'c4\'aa (column alias) \'c1\'f6\'c1\'a4\par
+ SELECT\par
+ certi_cd AS "\'c0\'da\'b0\'dd\'c1\'f5 \'c4\'da\'b5\'e5" -- AS "NAMVE"\par
+ , certi_nm AS \'c0\'da\'b0\'dd\'c1\'f5\'b8\'ed -- AS NAME\par
+ , issue_insti_nm \'b9\'df\'b1\'de\'b1\'e2\'b0\'fc\'b8\'ed -- NAME\par
+ FROM tb_certi;\par
+ \par
+ 38) AS\'b4\'c2 \'c7\'d7\'bb\'f3 \'bb\'fd\'b7\'ab\'c0\'cc \'b0\'a1\'b4\'c9\'c7\'cf\'b4\'d9.\par
+ -- "" \'b4\'c2 \'b7\'ea\'c0\'cc \'c0\'d6\'b4\'d9. NAME\'bf\'a1 \'b6\'e7\'be\'ee\'be\'b2\'b1\'e2\'b0\'a1 \'c0\'d6\'b4\'d9\'b8\'e9 "NAME" \'bd\'d6\'b5\'fb\'bf\'c8\'c7\'a5 \'bb\'e7\'bf\'eb.\par
+ \par
+  \par
+ 39) \'b9\'ae\'c0\'da\'bf\'ad \'b0\'e1\'c7\'d5 \'bf\'ac\'bb\'ea\'c0\'da ||\par
+ -- ex) SQLD(100002) - \'c7\'d1\'b1\'b9\'b5\'a5\'c0\'cc\'c5\'cd\'c1\'f8\'c8\'ef\'bf\'f8\par
+ \par
+ 40) SELECT\par
+      certi_nm || '(' || certi_cd || ') -' || issue_insti_nm AS "\'c0\'da\'b0\'dd\'c1\'f5 \'c1\'a4\'ba\'b8"\par
+ FROM tb_certi;\par
+ \par
+ 41) \'b4\'f5\'b9\'cc \'c5\'d7\'c0\'cc\'ba\'ed (dual) : \'b4\'dc\'bc\'f8 \'bf\'ac\'bb\'ea\'b0\'e1\'b0\'fa\'b8\'a6 \'c1\'b6\'c8\'b8\'c7\'d2 \'b6\'a7 \'bb\'e7\'bf\'eb\par
+ \par
+ 42) SELECT \par
+  3*7 AS "\'bf\'ac\'bb\'ea\'b0\'e1\'b0\'fa"\par
+ FROM dual;\par
+ \par
+ 43) SELECT \par
+  SYSDATE AS "\'c7\'f6\'c0\'e7 \'b3\'af\'c2\'a5"\par
+ FROM dual;\par
+ \lang18\par
+ 44) DDL (Data Definition Language : \'b5\'a5\'c0\'cc\'c5\'cd \'c1\'a4\'c0\'c7\'be\'ee)\par
+   \'c5\'d7\'c0\'cc\'ba\'ed\'b0\'fa \'b0\'b0\'c0\'ba \'b5\'a5\'c0\'cc\'c5\'cd \'b1\'b8\'c1\'b6\'b8\'a6 \'c1\'a4\'c0\'c7\'c7\'cf\'b4\'c2\'b5\'a5 \'bb\'e7\'bf\'eb\'b5\'c7\'b4\'c2 \'b8\'ed\'b7\'c9\'be\'ee\'b5\'e9\par
+\par
+\par
+45) DDL \'c1\'be\'b7\'f9\par
+ 1. CREATE : \'b5\'a5\'c0\'cc\'c5\'cd \'b1\'b8\'c1\'b6\'b8\'a6 \'bb\'fd\'bc\'ba\par
+
+\pard\nowidctlpar\fi100\sa200\sl276\slmult1 2. ALTER : \'b5\'a5\'c0\'cc\'c5\'cd \'b1\'b8\'c1\'b6\'c0\'c7 \'ba\'af\'b0\'e6\par
+3. DROP : \'b5\'a5\'c0\'cc\'c5\'cd \'b1\'b8\'c1\'b6\'c0\'c7 \'bb\'e8\'c1\'a6\par
+4. RENAME : \'b5\'a5\'c0\'cc\'c5\'cd \'b1\'b8\'c1\'b6 \'c0\'cc\'b8\'a7 \'ba\'af\'b0\'e6\par
+5. TRUNCATE  : \'b5\'a5\'c0\'cc\'c5\'cd \'b1\'b8\'c1\'b6\'b4\'c2 \'b5\'d0 \'bb\'f3\'c5\'c2\'b7\'ce \'b5\'a5\'c0\'cc\'c5\'cd \'c3\'ca\'b1\'e2\'c8\'ad\par
+\par
+46) DML (Data Manipulation Language : \'b5\'a5\'c0\'cc\'c5\'cd \'c1\'b6\'c0\'db\'be\'ee)\par
+\par
+47) DML\'c0\'c7 \'c1\'be\'b7\'f9\par
+ 1. SELECT : \'b5\'a5\'c0\'cc\'c5\'cd\'ba\'a3\'c0\'cc\'bd\'ba\'bf\'a1 \'b5\'e9\'be\'ee \'c0\'d6\'b4\'c2 \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6 \'c1\'b6\'c8\'b8\'c7\'cf\'b0\'c5\'b3\'aa \'b0\'cb\'bb\'f6\'c7\'cf\'b1\'e2 \'c0\'a7\'c7\'d1 \'b8\'ed\'b7\'c9\'be\'ee\par
+ 2. INSERT : \'b5\'a5\'c0\'cc\'c5\'cd \'ba\'a3\'c0\'cc\'bd\'ba\'bf\'a1 \'b5\'e9\'be\'ee\'c0\'d6\'b4\'c2 \'b5\'a5\'c0\'cc\'c5\'cd\'bf\'a1 \'ba\'af\'c7\'fc\'c0\'bb \'b0\'a1\'c7\'cf\'b4\'c2\'b5\'a5 \'bb\'e7\'bf\'eb\'b5\'c7\'b4\'c2 \'b8\'ed\'b7\'c9\'be\'ee (\'bb\'f0\'c0\'d4)\par
+ 3. UPDATE : \'b5\'a5\'c0\'cc\'c5\'cd \'ba\'a3\'c0\'cc\'bd\'ba\'bf\'a1 \'b5\'e9\'be\'ee\'c0\'d6\'b4\'c2 \'b5\'a5\'c0\'cc\'c5\'cd\'bf\'a1 \'ba\'af\'c7\'fc\'c0\'bb \'b0\'a1\'c7\'cf\'b4\'c2\'b5\'a5 \'bb\'e7\'bf\'eb\'b5\'c7\'b4\'c2 \'b8\'ed\'b7\'c9\'be\'ee (\'bc\'f6\'c1\'a4)\par
+ 4. DELETE : \'b5\'a5\'c0\'cc\'c5\'cd \'ba\'a3\'c0\'cc\'bd\'ba\'bf\'a1 \'b5\'e9\'be\'ee\'c0\'d6\'b4\'c2 \'b5\'a5\'c0\'cc\'c5\'cd\'bf\'a1 \'ba\'af\'c7\'fc\'c0\'bb \'b0\'a1\'c7\'cf\'b4\'c2\'b5\'a5 \'bb\'e7\'bf\'eb\'b5\'c7\'b4\'c2 \'b8\'ed\'b7\'c9\'be\'ee (\'bb\'e8\'c1\'a6)\par
+\par
+
+\pard\nowidctlpar\sa200\sl276\slmult1 48) DCL(Data Control Language : \'b5\'a5\'c0\'cc\'c5\'cd \'c1\'a6\'be\'ee\'be\'ee)\par
+    : \'b5\'a5\'c0\'cc\'c5\'cd \'ba\'a3\'c0\'cc\'bd\'ba\'bf\'a1 \'c1\'a2\'b1\'d9\'c7\'cf\'b0\'ed \'b0\'b4\'c3\'bc\'b5\'e9\'c0\'bb \'bb\'e7\'bf\'eb\'c7\'cf\'b5\'b5\'b7\'cf \'b1\'c7\'c7\'d1\'c0\'bb \'ba\'ce\'bf\'a9 \'b9\'d7 \'c8\'b8\'bc\'f6\'c7\'cf\'b4\'c2 \'b8\'ed\'b7\'c9\'be\'ee\par
+\par
+49) DCL\'c0\'c7 \'c1\'be\'b7\'f9\par
+   1. GRANT : \'b5\'a5\'c0\'cc\'c5\'cd\'ba\'a3\'c0\'cc\'bd\'ba\'bf\'a1 \'c1\'a2\'b1\'d9\'c7\'cf\'b0\'ed \'b0\'b4\'c3\'bc\'b5\'e9\'c0\'bb \'bb\'e7\'bf\'eb\'c7\'cf\'b5\'b5\'b7\'cf \'b1\'c7\'c7\'d1\'c0\'bb \'ba\'ce\'bf\'a9\par
+   2. REVOKE : \'b5\'a5\'c0\'cc\'c5\'cd\'ba\'a3\'c0\'cc\'bd\'ba\'bf\'a1 \'c1\'a2\'b1\'d9\'c7\'cf\'b0\'ed \'b0\'b4\'c3\'bc\'b5\'e9\'c0\'bb \'bb\'e7\'bf\'eb\'c7\'d2 \'bc\'f6 \'c0\'d5\'b4\'c2 \'b1\'c7\'c7\'d1\'c0\'bb \'c8\'b8\'bc\'f6\par
+50) TCL(Trasaction Control Language : \'c6\'ae\'b7\'a3\'c0\'e8\'bc\'c7 \'c1\'a6\'be\'ee\'be\'ee) \par
+ : \'b3\'ed\'b8\'ae\'c0\'fb\'c0\'ce \'c0\'db\'be\'f7 \'b4\'dc\'c0\'a7\'b8\'a6 \'b9\'ad\'be\'ee\'bc\'ad DML\'bf\'a1 \'c0\'c7\'c7\'d8 \'c1\'b6\'c0\'db\'b5\'c8 \'b0\'e1\'b0\'fa\'b8\'a6 \'c0\'db\'be\'f7\'b4\'dc\'c0\'a7\'ba\'b0\'b7\'ce \'c0\'fb\'bf\'eb \'b9\'d7 \'c3\'eb\'bc\'d2\'c7\'cf\'b4\'c2 \'b8\'ed\'b7\'c9\'be\'ee\par
+ \par
+51) TCL \'c1\'be\'b7\'f9\par
+ 1. COMMIT\par
+ 2. ROLLBACK\par
+\par
+52) \'c6\'ae\'b7\'a3\'c0\'e8\'bc\'c7\'c0\'c7 \'c6\'af\'c2\'a1\par
+ 1. \'b5\'a5\'c0\'cc\'c5\'cd\'ba\'a3\'c0\'cc\'bd\'ba\'c0\'c7 \'b3\'ed\'b8\'ae\'c0\'fb \'bf\'ac\'bb\'ea\'b4\'dc\'c0\'a7 \'c0\'cc\'b4\'d9.\par
+ 2. \'c7\'cf\'b3\'aa\'c0\'c7 \'c6\'ae\'b7\'a3\'c0\'e8\'bc\'c7\'bf\'a1\'b4\'c2 \'c7\'cf\'b3\'aa \'c0\'cc\'bb\'f3\'c0\'c7 SQL \'b9\'ae\'c0\'e5\'c0\'cc \'c6\'f7\'c7\'d4\'b5\'c8\'b4\'d9. \'c6\'ae\'b7\'a3\'c0\'e8\'bc\'c7\'c0\'ba \'ba\'d0\'c7\'d2\'c7\'d2 \'bc\'f6 \'be\'f8\'b4\'c2 \'c3\'d6\'bc\'d2\'c0\'c7 \'b4\'dc\'c0\'a7 \'c0\'cc\'b4\'d9. \'b1\'d7\'b7\'b8\'b1\'e2 \'b6\'a7\'b9\'ae\'bf\'a1 \'c0\'fc\'ba\'ce \'c0\'fb\'bf\'eb\'c7\'cf\'b0\'c5\'b3\'aa \'c0\'fc\'ba\'ce \'c3\'eb\'bc\'d2\'c7\'d1\'b4\'d9. \'c1\'ef, TRANSATION\'c0\'ba ALL OR NOTIONG\'c0\'c7 \'b0\'b3\'b3\'e4\par
+ 3. \'bf\'f8\'c0\'da\'bc\'ba (Atomicity) \par
+   - \'c6\'ae\'b7\'a3\'c0\'e8\'bc\'c7\'bf\'a1\'bc\'ad \'c1\'a4\'c0\'c7\'b5\'c8 \'bf\'ac\'bb\'ea\'b5\'e9\'c0\'ba \'b8\'f0\'b5\'ce \'bc\'ba\'b0\'f8\'c0\'fb\'c0\'b8\'b7\'ce \'b3\'a1\'b3\'aa\'b0\'c5\'b3\'aa \'b8\'f0\'b5\'ce \'bd\'c7\'c6\'d0\'c7\'d8\'be\'df \'c7\'d1\'b4\'d9.\par
+   - All or Notihing\par
+ 4. \'c0\'cf\'b0\'fc\'bc\'ba (Conistency) \par
+
+\pard\nowidctlpar\fi200\sa200\sl276\slmult1 - \'c6\'ae\'b7\'a3\'c0\'e8\'bc\'c7\'c0\'cc \'bd\'c7\'c7\'e0\'b5\'c7\'b1\'e2 \'c0\'fc\'c0\'c7 \'b5\'a5\'c0\'cc\'c5\'cd\'ba\'a3\'c0\'cc\'bd\'ba\'c0\'c7 \'b3\'bb\'bf\'eb\'c0\'cc \'c0\'df\'b8\'f8\'b5\'c7\'be\'ee \'c0\'d6\'c1\'f6 \'be\'ca\'b4\'d9\'b8\'e9 \'bd\'c7\'c7\'e0\'b5\'c8 \'c0\'cc\'c8\'c4\'bf\'a1\'bc\'ad \'b5\'a5\'c0\'cc\'c5\'cd\'ba\'a3\'c0\'cc\'bd\'ba\'c0\'c7 \'b3\'bb\'bf\'eb\'bf\'a1 \'c0\'df\'b8\'f8\'c0\'cc \'c0\'d6\'c0\'b8\'b8\'e9 \'be\'c8\'b5\'c8\'b4\'d9.\par
+
+\pard\nowidctlpar\sa200\sl276\slmult1  5. \'b0\'ed\'b8\'b3\'bc\'ba(Isolation) \par
+
+\pard\nowidctlpar\fi200\sa200\sl276\slmult1 - \'c6\'ae\'b7\'a3\'c0\'e8\'bc\'c7\'c0\'cc \'bd\'c7\'c7\'e0\'b5\'c7\'b4\'c2 \'b5\'b5\'c1\'df\'bf\'a1 \'b4\'d9\'b8\'a5 \'c6\'ae\'b7\'a3\'c0\'e8\'bc\'c7\'c0\'c7 \'bf\'b5\'c7\'e2\'c0\'bb \'b9\'de\'be\'c6 \'c0\'df\'b8\'f8\'b5\'c8 \'b0\'e1\'b0\'fa\'b8\'a6 \'b8\'b8\'b5\'e9\'be\'ee\'bc\'ad\'b4\'c2 \'be\'c8\'b5\'c8\'b4\'d9.\par
+
+\pard\nowidctlpar\sa200\sl276\slmult1  6. \'c1\'f6\'bc\'d3\'bc\'ba(Durability)\par
+
+\pard\nowidctlpar\fi200\sa200\sl276\slmult1 - \'c6\'ae\'b7\'a3\'c0\'e8\'bc\'c7\'c0\'cc \'bc\'ba\'b0\'f8\'c0\'fb\'c0\'b8\'b7\'ce \'bc\'f6\'c7\'e0\'b5\'c7\'b8\'e9 \'b1\'d7 \'c6\'ae\'b7\'a3\'c0\'e8\'bc\'c7\'c0\'cc \'b0\'bb\'bd\'c5\'c7\'d1 \'b5\'a5\'c0\'cc\'c5\'cd\'ba\'a3\'c0\'cc\'bd\'ba\'c0\'c7 \'b3\'bb\'bf\'eb\'c0\'ba \'bf\'b5\'b1\'b8\'c0\'fb\'c0\'b8\'b7\'ce \'c0\'fa\'c0\'e5\'b5\'c8\'b4\'d9.\par
+
+\pard\nowidctlpar\sa200\sl276\slmult1 53) \'c6\'ae\'b7\'a3\'c0\'e8\'bc\'c7\'c0\'c7 \'bf\'e4\'c1\'a1\par
+ 1. \'c5\'d7\'c0\'cc\'ba\'ed\'bf\'a1 \'b5\'a5\'c0\'cc\'c5\'cd\'c0\'c7 \'ba\'af\'b0\'e6\'c0\'bb \'b9\'df\'bb\'fd\'bd\'c3\'c5\'b0\'b4\'c2 \'c0\'d4\'b7\'c2(INSERT), \'bc\'f6\'c1\'a4(UPDATE), \'bb\'e8\'c1\'a6(DELETE) \'bc\'f6\'c7\'e0 \'bd\'c3 \'b1\'d7 \'ba\'af\'b0\'e6\'b5\'c7\'b4\'c2 \'b5\'a5\'c0\'cc\'c5\'cd\'c0\'c7 \'b9\'ab\'b0\'e1\'bc\'ba\'c0\'bb \'ba\'b8\'c0\'e5\'c7\'cf\'b4\'c2 \'b0\'cd\'c0\'cc \'c4\'bf\'b9\'d4(COMMIT)\'b0\'fa \'b7\'d1\'b9\'e9(ROLLBACK)\'c0\'c7 \'b8\'f1\'c0\'fb\par
+ 2. \'c4\'bf\'b9\'d4(COMMIT)\'c0\'ba \f0\ldblquote\f1\'ba\'af\'b0\'e6\'b5\'c8 \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6 \'c5\'d7\'c0\'cc\'ba\'ed\'c0\'cc \'bf\'b5\'b1\'b8\'c0\'fb\'c0\'b8\'b7\'ce \'b9\'dd\'bf\'b5\'c7\'d8\'b6\'f3\f0\rdblquote\f1  \'b6\'f3\'b4\'c2 \'c0\'c7\'b9\'cc\'b8\'a6 \'b0\'ae\'b4\'c2 \'b0\'cd.\par
+ 3. \'b7\'d1\'b9\'e9(ROLLBACK)\'c0\'ba \f0\ldblquote\f1\'ba\'af\'b0\'e6\'c0\'fc\'c0\'b8\'b7\'ce \'ba\'b9\'b1\'cd \'c7\'cf\'b6\'f3\f0\rdblquote\f1\'b4\'c2 \'c0\'c7\'b9\'cc.\par
+ 4. \'c0\'fa\'c0\'e5\'c1\'a1(SAVEPOINT/SAVE TRANSATION)\'c0\'ba \f0\ldblquote\f1\'b5\'a5\'c0\'cc\'c5\'cd \'ba\'af\'b0\'e6\'c0\'bb \'bb\'e7\'c0\'fc\'bf\'a1 \'c1\'f6\'c1\'a4\'c7\'d1 \'c0\'fa\'c0\'e5\'c1\'a1\'b1\'ee\'c1\'f6\'b8\'b8 \'b7\'d1\'b9\'e9\'c7\'cf\'b6\'f3\f0\rdblquote\f1\'b4\'c2 \'c0\'c7\'b9\'cc\par
+ 5. Oracle\'c0\'c7 \'c6\'ae\'b7\'a3\'c0\'e8\'bc\'c7\'c0\'ba \'c6\'ae\'b7\'a3\'c0\'e8\'bc\'c7\'c0\'c7 \'b4\'eb\'bb\'f3\'c0\'cc \'b5\'c7\'b4\'c2 SQL \'b9\'ae\'c0\'e5\'c0\'bb \'bd\'c7\'c7\'e0\'c7\'cf\'b8\'e9 \'c0\'da\'b5\'bf\'c0\'b8\'b7\'ce \'bd\'c3\'c0\'db\'b5\'c7\'b0\'ed, COMMIT \'b6\'c7\'b4\'c2 ROLLBACK\'c0\'bb \'bd\'c7\'c7\'e0\'c7\'d1 \'bd\'c3\'c1\'a1\'bf\'a1\'bc\'ad \'c1\'be\'b7\'e1\par
+\par
+54) COMMIT \'b9\'d7 ROLLBACK \'c3\'b3\'b8\'ae\'bf\'cd\'b4\'c2 \'bb\'f3\'b0\'fc\'be\'f8\'c0\'cc \'c6\'ae\'b7\'a3\'c0\'e8\'bc\'c7 \'c3\'b3\'b8\'ae\'b0\'a1 \'c0\'cf\'be\'ee\'b3\'aa\'b4\'c2 \'bb\'f3\'c8\'b2\par
+ 1. CREATE, ALTER, DROP, RENAME, TRUNCATE TABLE \'b5\'ee DDL \'b9\'ae\'c0\'e5\'c0\'bb \'bd\'c7\'c7\'e0\'c7\'cf\'b8\'e9 \'b1\'d7 \'c0\'fc\'c8\'c4 \'bd\'c3\'c1\'a1\'bf\'a1 \'c0\'da\'b5\'bf\'c0\'b8\'b7\'ce \'c4\'bf\'b9\'d4 \'b5\'c8\'b4\'d9.\par
+ 2. DML \'b9\'ae\'c0\'e5 \'c0\'cc\'c8\'c4\'bf\'a1 \'c4\'bf\'b9\'d4 \'be\'f8\'c0\'cc DDL \'b9\'ae\'c0\'e5\'c0\'cc \'bd\'c7\'c7\'e0\'b5\'c7\'b8\'e9 DDL \'bc\'f6\'c7\'e0 \'c0\'fc\'bf\'a1 \'c0\'da\'b5\'bf\'c0\'b8\'b7\'ce \'c4\'bf\'b9\'d4 \'b5\'c8\'b4\'d9.\par
+ 3. \'b5\'a5\'c0\'cc\'c5\'cd\'ba\'a3\'c0\'cc\'bd\'ba\'b8\'a6 \'c1\'a4\'bb\'f3\'c0\'fb\'c0\'b8\'b7\'ce \'c1\'a2\'bc\'d3\'c0\'bb \'c1\'be\'b7\'e1\'c7\'cf\'b8\'e9 \'c0\'da\'b5\'bf\'c0\'b8\'b7\'ce \'c6\'ae\'b7\'a3\'c0\'e8\'bc\'c7\'c0\'cc \'c4\'bf\'b9\'d4 \'b5\'c8\'b4\'d9.\par
+ 4. \'be\'d6\'c7\'c3\'b8\'ae\'c4\'c9\'c0\'cc\'bc\'c7\'c0\'c7 \'c0\'cc\'bb\'f3 \'c1\'be\'b7\'e1\'b7\'ce \'b5\'a5\'c0\'cc\'c5\'cd\'ba\'a3\'c0\'cc\'bd\'ba\'bf\'cd\'c0\'c7 \'c1\'a2\'bc\'d3\'c0\'cc \'b4\'dc\'c0\'fd\'b5\'c7\'be\'fa\'c0\'bb \'b6\'a7\'b4\'c2 \'c6\'ae\'b7\'a3\'c0\'e8\'bc\'c7\'c0\'cc \'c0\'da\'b5\'bf\'c0\'b8\'b7\'ce \'b7\'d1\'b9\'e9 \'b5\'c8\'b4\'d9.\par
+\par
+\lang1042 ==== day02\par
+\lang18\par
+55) \lang1042\'c5\'d7\'c0\'cc\'ba\'ed \'bb\'fd\'bc\'ba\'bd\'c3 DELETE \'bf\'c9\'bc\'c7 ( 1 - 12\'b9\'f8 \'b9\'ae\'c1\'a6)\par
+1.CASCADE :  \'ba\'ce\'b8\'f0 \'bb\'e8\'c1\'a6\'bd\'c3 \'c0\'da\'bd\'c4 \'c7\'e0 \'b0\'b0\'c0\'cc \'bb\'e8\'c1\'a6\par
+2. SET NULL :  \'ba\'ce\'b8\'f0 \'bb\'e8\'c1\'a6\'bd\'c3 \'c0\'da\'bd\'c4\'c0\'c7 \'b0\'aa null\'b7\'ce \'ba\'af\'b0\'e6\par
+3. SET DEFAULT : \'ba\'ce\'b8\'f0 \'bb\'e8\'c1\'a6\'bd\'c3 \'c0\'da\'bd\'c4\'c0\'c7 \'b0\'aa default\'b0\'aa\'c0\'b8\'b7\'ce \'ba\'af\'b0\'e6\par
+4. RESTRICT : \'c0\'da\'bd\'c4\'c0\'c7 PK\'b0\'a1 \'be\'f8\'c0\'bb \'b6\'a7\'b8\'b8 \'ba\'ce\'b8\'f0 \'bb\'e8\'c1\'a6\'b8\'a6 \'c7\'e3\'bf\'eb\par
+5. NO ACTION : \'c2\'fc\'c1\'b6 \'b9\'ab\'b0\'e1\'bc\'ba\'c0\'bb \'c0\'a7\'b9\'dd\'c7\'cf\'b4\'c2 \'bb\'e8\'c1\'a6 / \'bc\'f6\'c1\'a4 \'c7\'e3\'bf\'eb X\par
+\par
+56) \'c0\'ce\'b5\'a6\'bd\'ba \'bb\'fd\'bc\'ba\'b9\'ae\'b9\'fd\par
+CREATE INDEX \'c0\'ce\'b5\'a6\'bd\'ba\'b8\'ed ON \'c5\'d7\'c0\'cc\'ba\'ed\'b8\'ed (\'c1\'f6\'c1\'a4\'c7\'d2 \'c4\'c3\'b7\'b3\'b8\'ed)\par
+\par
+57) \'c5\'d7\'c0\'cc\'ba\'ed \'bb\'fd\'bc\'ba\'bd\'c3 INSERT \'bf\'c9\'bc\'c7\par
+1. SET NULL : \'ba\'ce\'b8\'f0 \'bb\'f0\'c0\'d4\'bd\'c3 \'c0\'da\'bd\'c4\'c0\'c7 \'b0\'aa null\'b7\'ce \'bb\'f0\'c0\'d4\par
+2. SET DEFAULT : \'ba\'ce\'b8\'f0 \'bb\'f0\'c0\'d4\'bd\'c3 \'c0\'da\'bd\'c4\'c0\'c7 \'b0\'aa default\'b0\'aa\'c0\'b8\'b7\'ce \'bb\'f0\'c0\'d4\par
+3. AUTOMATIC : \'ba\'ce\'b8\'f0\'c0\'c7 PK\'b0\'a1 \'be\'f8\'c0\'bb \'bd\'c3 \'ba\'ce\'b8\'f0\'c0\'c7 PK\'b8\'a6 \'bb\'fd\'bc\'ba\'c7\'d1 \'c8\'c4 \'c0\'da\'bd\'c4 \'bb\'f0\'c0\'d4\par
+4. DEPENDENT : \'ba\'ce\'b8\'f0\'c0\'c7 PK\'b0\'a1 \'be\'f8\'b4\'c2\'b0\'e6\'bf\'ec \'c0\'da\'bd\'c4\'c0\'c7 \'bb\'f0\'c0\'d4\'c0\'bb \'c7\'e3\'bf\'eb\'c7\'cf\'c1\'f6 \'be\'ca\'c0\'bd\par
+\par
+\par
+-- WHERE \'c1\'b6\'b0\'c7\'c0\'fd : \'c1\'b6\'c8\'b8 \'b0\'e1\'b0\'fa \'c7\'e0\'c0\'bb \'c1\'a6\'c7\'d1\'c7\'cf\'b4\'c2 \'c1\'b6\'b0\'c7\'c0\'fd\par
+58) -- \'bc\'ba\'ba\'b0\'c0\'cc \'bf\'a9\'c0\'da\'c0\'ce \'bb\'e7\'b6\'f7\'b5\'e9\'c0\'c7 \'c1\'a4\'ba\'b8\'b8\'a6 WHERE \'c1\'b6\'b0\'c7\'c0\'fd\'b7\'ce \'bc\'b3\'c1\'a4\'c7\'cf\'bf\'a9 \'c3\'e2\'b7\'c2\par
+SELECT\par
+ emp_no, emp_nm, addr, sex_cd\par
+FROM tb_emp -- 41\'c7\'e0 \'c0\'ce\'c3\'e2 (\'c3\'d1 \'c7\'e0\'bc\'f6\'b0\'a1 41\'c7\'e0 \'c0\'d3)\par
+(            ) sex_cd = 2\par
+\par
+\par
+ 59) PK\'b7\'ce WHERE\'c0\'fd \'b5\'bf\'b5\'ee\'c1\'b6\'b0\'c7\'c0\'bb \'b8\'b8\'b5\'e9\'b8\'e9 \'b9\'dd\'b5\'e5\'bd\'c3 (            ) \'c0\'cc \'c1\'b6\'c8\'b8\'b5\'c8\'b4\'d9.\par
+SELECT\par
+ emp_no, emp_nm, addr, sex_cd\par
+FROM tb_emp \par
+WHERE emp_no = 1000000003;\par
+\par
+60) \'ba\'f1\'b1\'b3 \'bf\'ac\'bb\'ea\'c0\'da\par
+ -- -- 90\'b3\'e2\'bb\'fd\'c0\'ce \'bb\'e7\'bf\'f8\'b8\'b8 \'c1\'b6\'c8\'b8 \'c7\'cf\'b7\'c1\'b0\'ed \'c7\'d1\'b4\'d9.\par
+SELECT \par
+    emp_no, emp_nm, birth_de, tel_no\par
+FROM tb_emp\par
+WHERE birth_de >= (               ) (               ) birth_de (               ) (                  )' ;\par
+    \par
+61) SELECT \par
+    emp_no, emp_nm, birth_de, tel_no\par
+FROM tb_emp\par
+WHERE birth_de (               )'19900101' (               )'19991231';\par
+\par
+62) OR \'bf\'ac\'bb\'ea\par
+-- \'ba\'ce\'bc\'ad \'b9\'f8\'c8\'a3\'b0\'a1 100004 \'c0\'cc\'b0\'c5\'b3\'aa 100006 \'c0\'ce \'bb\'e7\'bf\'f8\'c0\'c7 \'c1\'a4\'ba\'b8 \'c1\'b6\'c8\'b8\par
+SELECT\par
+      emp_no, emp_nm, dept_cd\par
+FROM tb_emp\par
+WHERE dept_cd = (               )\par
+       (               ) dept_cd = (               )\par
+; \par
+\par
+\par
+-- IN \'bf\'ac\'bb\'ea\'c0\'da\par
+SELECT\par
+      emp_no, emp_nm, dept_cd\par
+FROM tb_emp\par
+WHERE dept_cd in('100004', '100006')\par
+; -- \'ba\'ce\'bc\'ad \'b9\'f8\'c8\'a3\'b0\'a1 100004 \'c0\'cc\'b0\'c5\'b3\'aa 100006 \'c0\'ce \'bb\'e7\'bf\'f8\'c0\'c7 \'c1\'a4\'ba\'b8 \'c1\'b6\'c8\'b8\par
+\par
+\par
+-- NOT IN \'bf\'ac\'bb\'ea\'c0\'da\par
+SELECT\par
+    emp_no, emp_nm, dept_cd\par
+FROM tb_emp\par
+WHERE dept_cd NOT IN('100004','100006')\par
+; -- \'ba\'ce\'bc\'ad \'b9\'f8\'c8\'a3\'b0\'a1 100004 \'b9\'f8\'b0\'fa, 100006\'c0\'ce \'bb\'e7\'bf\'f8\'c0\'c7 \'c1\'a4\'ba\'b8\'b4\'c2 \'b3\'aa\'bf\'c0\'c1\'f6 \'be\'ca\'b4\'c2\'b4\'d9.\par
+  -- 100004\'b9\'f8 100006\'b9\'f8 \'ba\'ce\'bc\'ad\'b8\'a6 \'bb\'a9\'b0\'ed \'c1\'b6\'c8\'b8\'c7\'d8 \'c1\'e0\'b6\'f3.\par
+\par
+-- LIKE \'bf\'ac\'bb\'ea\'c0\'da\par
+-- \'b0\'cb\'bb\'f6\'bd\'c3 \'bb\'e7\'bf\'eb ( ex) \'c1\'a6\'b8\'f1\'c0\'b8\'b7\'ce \'b0\'cb\'bb\'f6, \'b3\'bb\'bf\'eb\'c0\'b8\'b7\'ce \'b0\'cb\'bb\'f6 \'bd\'c3)\par
+-- \'bf\'cd\'c0\'cf\'b5\'e5 \'c4\'ab\'b5\'e5 \'b8\'ca\'c7\'ce (% : 0\'b1\'db\'c0\'da \'c0\'cc\'bb\'f3, _ : \'b4\'dc 1\'b1\'db\'c0\'da\'b8\'b8)\par
+\par
+SELECT \par
+ emp_no, emp_nm\par
+FROM tb_emp\par
+WHERE emp_nm LIKE '\'c0\'cc%' -- \'c0\'cc\'b8\'a7\'c0\'c7 \'bd\'c3\'c0\'db\'c0\'cc '\'c0\'cc'\'c0\'cc\'b8\'e9 \'b8\'f0\'b5\'ce \'c1\'b6\'c8\'b8 \par
+;\par
+\par
+SELECT \par
+ emp_no, emp_nm\par
+FROM tb_emp\par
+WHERE emp_nm LIKE '\'c0\'cc__' -- \'c0\'cc\'b7\'ce \'bd\'c3\'c0\'db\'c7\'cf\'b4\'c2\'b5\'a5 \'b5\'da\'bf\'a1 \'b4\'dc 2\'b1\'db\'c0\'da\'b8\'b8 \'c0\'d6\'b4\'c2 \'bb\'e7\'bf\'f8\'c0\'c7 \'c0\'cc\'b8\'a7\'c0\'bb \'c1\'b6\'c8\'b8\par
+;\par
+\par
+SELECT \par
+ emp_no, emp_nm\par
+FROM tb_emp\par
+WHERE emp_nm LIKE '%\'bd\'c9' -- \'c0\'cc\'b8\'a7\'c0\'c7 \'b3\'a1 \'b1\'db\'c0\'da\'b0\'a1 \'bd\'c9\'c0\'b8\'b7\'ce \'b3\'a1\'b3\'aa\'b4\'c2 \'bb\'e7\'bf\'f8\'c0\'c7 \'c0\'cc\'b8\'a7\'c0\'bb \'c1\'b6\'c8\'b8\par
+;\par
+\par
+SELECT\par
+ emp_no, emp_nm, addr\par
+FROM tb_emp\par
+WHERE addr LIKE '%\'bf\'eb\'c0\'ce%'\par
+;\par
+\par
+-- \'bc\'ba\'be\'be\'b0\'a1 \'b1\'e8\'be\'be\'c0\'cc\'b8\'e9\'bc\'ad, \'ba\'ce\'bc\'ad\'b0\'a1 100003, 100004, 100006\'b9\'f8 \'c1\'df\'bf\'a1 \'c7\'cf\'b3\'aa\'c0\'cc\'b8\'e9\'bc\'ad, \par
+-- 90\'b3\'e2\'b4\'eb\'bb\'fd\'c0\'ce \'bb\'e7\'bf\'f8\'c0\'c7 \'bb\'e7\'b9\'f8, \'c0\'cc\'b8\'a7, \'bb\'fd\'c0\'cf, \'ba\'ce\'bc\'ad\'c4\'da\'b5\'e5\'b8\'a6 \'c1\'b6\'c8\'b8\par
+\par
+SELECT\par
+ emp_no, emp_nm, birth_de, dept_cd\par
+FROM tb_emp\par
+WHERE 1=1 -- \'bd\'c7\'b9\'ab \'c6\'c1\par
+AND emp_nm LIKE '\'b1\'e8%' \par
+AND dept_cd IN('100003','100004','100006')\par
+AND birth_de BETWEEN '19900101' AND '19991231'\par
+;\par
+\par
+-- \'ba\'ce\'c1\'a4 \'c0\'cf\'c4\'a1 \'ba\'f1\'b1\'b3 \'bf\'ac\'bb\'ea\'c0\'da\par
+SELECT\par
+ emp_no, emp_nm, addr, sex_cd\par
+FROM tb_emp \par
+WHERE sex_cd != 2 -- \'bc\'ba\'ba\'b0\'c0\'cc \'bf\'a9\'c0\'da\'b0\'a1 \'be\'c6\'b4\'d1 \'bb\'e7\'b6\'f7\par
+-- WHERE sex_cd ^= 2 -- \'bc\'ba\'ba\'b0\'c0\'cc \'bf\'a9\'c0\'da\'b0\'a1 \'be\'c6\'b4\'d1 \'bb\'e7\'b6\'f7\par
+-- WHERE sex_cd <> 2 -- \'bc\'ba\'ba\'b0\'c0\'cc \'bf\'a9\'c0\'da\'b0\'a1 \'be\'c6\'b4\'d1 \'bb\'e7\'b6\'f7\par
+-- WHERE NOT sex_cd = 2 -- \'bc\'ba\'ba\'b0\'c0\'cc \'bf\'a9\'c0\'da\'b0\'a1 \'be\'c6\'b4\'d1 \'bb\'e7\'b6\'f7\par
+; \par
+\par
+\par
+-- \'bc\'ba\'ba\'b0 \'c4\'da\'b5\'e5\'b0\'a1 1\'c0\'cc \'be\'c6\'b4\'cf\'b8\'e9\'bc\'ad \'bc\'ba\'be\'be\'b0\'a1 \'c0\'cc\'be\'be\'b0\'a1 \'be\'c6\'b4\'d1 \'bb\'e7\'b6\'f7\'b5\'e9\'c0\'c7 \par
+-- \'bb\'e7\'b9\'f8, \'c0\'cc\'b8\'a7, \'bc\'ba\'ba\'b0\'c4\'da\'b5\'e5\'b8\'a6 \'c1\'b6\'c8\'b8\'c7\'cf\'bc\'bc\'bf\'e4.\par
+\par
+SELECT\par
+\par
+emp_no, emp_nm, sex_cd\par
+\par
+FROM tb_emp \par
+WHERE sex_cd <> 1 AND emp_nm NOT LIKE '\'c0\'cc%'\par
+;\par
+\par
+--null\'b0\'aa \'c1\'b6\'c8\'b8\par
+\par
+SELECT \par
+ emp_no, emp_nm, direct_manager_emp_no\par
+FROM tb_emp\par
+WHERE direct_manager_emp_no IS NULL -- null \'b0\'aa \'c1\'b6\'c8\'b8\par
+; \par
+\par
+SELECT \par
+ emp_no, emp_nm, direct_manager_emp_no\par
+FROM tb_emp\par
+WHERE direct_manager_emp_no IS NOT NULL -- null\'b0\'aa\'c0\'cc \'be\'c6\'b4\'d1 \'b0\'cd \'c1\'b6\'c8\'b8\par
+;\par
+\par
+-- \'bf\'ac\'bb\'ea\'c0\'da \'bf\'ec\'bc\'b1\'bc\'f8\'c0\'a7 : NOT > AND > OR\par
+-- \'bb\'e7\'bf\'f8\'c1\'a4\'ba\'b8 \'c1\'df\'bf\'a1 \'b1\'e8\'be\'be\'c0\'cc\'b8\'e9\'bc\'ad \'bc\'f6\'bf\'f8 \'b6\'c7\'b4\'c2 \'c0\'cf\'bb\'ea\'bf\'a1 \'bb\'e7\'b4\'c2 \'bb\'e7\'bf\'f8\'b5\'e9\'c0\'c7 \'c1\'a4\'ba\'b8\par
+SELECT\par
+ emp_no, emp_nm, addr\par
+FROM tb_emp\par
+WHERE 1=1\par
+AND emp_nm LIKE '\'b1\'e8%' -- \'b1\'e8\'be\'be\'b8\'e9\'bc\'ad \'bc\'f6\'bf\'f8\'bb\'e7\'b4\'c2 \'bb\'e7\'b6\'f7\'c0\'bb \'b0\'c9\'b7\'af\'b3\'bd\'c8\'c4\par
+AND (addr LIKE '%\'bc\'f6\'bf\'f8%' OR addr LIKE '%\'c0\'cf\'bb\'ea%') -- \'c0\'cf\'bb\'ea \'bb\'e7\'b4\'c2 \'bb\'e7\'bf\'f8\'c0\'bb \'c1\'b6\'c8\'b8\par
+                           -- OR\'c0\'bb \'bc\'b1 \'bf\'ac\'bb\'ea \'bd\'c3\'c5\'b0\'b1\'e2 \'c0\'a7\'c7\'d8 \'b0\'fd\'c8\'a3\'b7\'ce \par
+; \par
+
+\pard\sa200\sl276\slmult1\f0\lang18\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+}
+ 
